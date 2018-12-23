@@ -19,7 +19,7 @@ export default class MyButton extends React.Component {
         alignItems: 'center',
         borderRadius: 1,
         borderColor: "#999999",
-        backgroundColor: "#E0E0E0"
+        backgroundColor: props.bgColor ? props.bgColor : "#E0E0E0"
       },
       buttonText: {
         fontSize: 18
@@ -27,9 +27,10 @@ export default class MyButton extends React.Component {
     });
 
   }
+
   render() {
     return (
-      <TouchableOpacity style={this.styles.area}>
+      <TouchableOpacity style={this.styles.area} onPress={this.props.onPress}>
         <Text style={this.styles.buttonText}>{this.props.text}</Text>
       </TouchableOpacity>
     );
