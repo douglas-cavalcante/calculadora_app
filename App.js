@@ -1,18 +1,17 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import MyButton from './MyButton';
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
+import MyButton from "./MyButton";
 
 export default class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      result: '0',
+      result: "0",
     }
   }
 
-
-  addLabel = (buttonLabel) => {
+  addDigit = (buttonLabel) => {
     try {
       if (buttonLabel === "C") {
         this.setState({ result: 0 });
@@ -38,35 +37,35 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.row}>
-          <Text tyle={styles.result}>{this.state.result}</Text>
+          <Text style={styles.result}>{this.state.result}</Text>
         </View>
         <View style={styles.row}>
-          <MyButton col="3" text="C" bgColor="#cccccc" onPress={() => this.addLabel("C")} />
-          <MyButton text="X" bgColor="#cccccc" onPress={() => this.addLabel("X")} />
-          <MyButton text="/" bgColor="#fd9526" onPress={() => this.addLabel("/")} />
+          <MyButton col="2" text="C" bgColor="#cccccc" onPress={() => this.addDigit("C")} />
+          <MyButton text="X" bgColor="#cccccc" bold="bold" onPress={() => this.addDigit("X")} />
+          <MyButton text="/" bgColor="#87CEEB" onPress={() => this.addDigit("/")} />
         </View>
         <View style={styles.row}>
-          <MyButton text="7" onPress={() => this.addLabel("7")} />
-          <MyButton text="8" onPress={() => this.addLabel("8")} />
-          <MyButton text="9" onPress={() => this.addLabel("9")} />
-          <MyButton text="*" bgColor="#fd9526" onPress={() => this.addLabel("*")} />
+          <MyButton text="7" onPress={() => this.addDigit("7")} />
+          <MyButton text="8" onPress={() => this.addDigit("8")} />
+          <MyButton text="9" onPress={() => this.addDigit("9")} />
+          <MyButton text="*" bgColor="#87CEEB" onPress={() => this.addDigit("*")} />
         </View>
         <View style={styles.row}>
-          <MyButton text="4" onPress={() => this.addLabel("4")} />
-          <MyButton text="5" onPress={() => this.addLabel("5")} />
-          <MyButton text="6" onPress={() => this.addLabel("6")} />
-          <MyButton text="-" onPress={() => this.addLabel("-")} bgColor="#fd9526" />
+          <MyButton text="4" onPress={() => this.addDigit("4")} />
+          <MyButton text="5" onPress={() => this.addDigit("5")} />
+          <MyButton text="6" onPress={() => this.addDigit("6")} />
+          <MyButton text="-" onPress={() => this.addDigit("-")} bgColor="#87CEEB" />
         </View>
         <View style={styles.row}>
-          <MyButton text="1" onPress={() => this.addLabel("1")} />
-          <MyButton text="2" onPress={() => this.addLabel("2")} />
-          <MyButton text="3" onPress={() => this.addLabel("3")} />
-          <MyButton text="+" bgColor="#fd9526" onPress={() => this.addLabel("+")} />
+          <MyButton text="1" onPress={() => this.addDigit("1")} />
+          <MyButton text="2" onPress={() => this.addDigit("2")} />
+          <MyButton text="3" onPress={() => this.addDigit("3")} />
+          <MyButton text="+" bgColor="#87CEEB" onPress={() => this.addDigit("+")} />
         </View>
         <View style={styles.row}>
-          <MyButton col="2" text="0" onPress={() => this.addLabel("0")} />
-          <MyButton text="." onPress={() => this.addLabel(".")} />
-          <MyButton text="=" bgColor="#fd9526" onPress={() => this.addLabel("=")} />
+          <MyButton col="2" text="0" onPress={() => this.addDigit("0")} />
+          <MyButton text="." onPress={() => this.addDigit(".")} />
+          <MyButton text="=" bgColor="#87CEEB" onPress={() => this.addDigit("=")} />
         </View>
       </View>
     );
@@ -80,13 +79,13 @@ const styles = StyleSheet.create({
   },
   row: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   result: {
-    backgroundColor: '#000000',
-    color: '#ffffff',
+    backgroundColor: "transparent",
+    color: "#000000",
     fontSize: 50,
     flex: 1,
-    textAlign: 'right'
+    textAlign: "right"
   }
 });
