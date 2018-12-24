@@ -15,8 +15,8 @@ export default class MyButton extends React.Component {
     this.styles = StyleSheet.create({
       area: {
         flex: col,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         borderWidth: 1,
         borderColor: "#999999",
         backgroundColor: props.bgColor ? props.bgColor : "#E0E0E0"
